@@ -26,9 +26,6 @@ A few other shapes are awkward enough to flag:
 - The status enum lives only in the prose spec — no discovery endpoint, so adding a fifth status silently breaks chip styling.
 - Search covers body and author name but not project. Users will type project names first and get zero matches.
 
-## Lighthouse polish
-
-Production build scores 100/100/100/100 — bumped the foreground tokens to pass WCAG AA contrast and added a permissive `public/robots.txt` so Lighthouse stops parsing the SPA fallback as robots directives.
 
 ## What I'd reach for next
 
