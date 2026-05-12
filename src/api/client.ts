@@ -1,11 +1,6 @@
 /**
- * Typed fetch wrapper used by all API modules.
- *
- * Two responsibilities:
- *  1. Stringify and parse JSON, returning narrowed result types.
- *  2. Normalize all non-2xx responses into a single `ApiError` shape so
- *     UI code (TanStack Query hooks, forms) can branch on `.status` and
- *     `.details` without re-implementing parsing in every hook.
+ * Typed fetch wrapper. Normalizes all non-2xx responses into a single
+ * `ApiError` so hooks and forms can branch on `.status` / `.details`.
  */
 
 export interface ApiErrorBody {

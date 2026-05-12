@@ -11,13 +11,8 @@ import {
 import { statusKeys, teamSummaryKeys } from './status-keys'
 
 /**
- * Cache strategy:
- *  - Create: invalidate `lists()` and the team summary on success.
- *    A naive optimistic prepend would lie when the active filter
- *    excludes the new row, so we let the server be the source of truth.
- *  - Update: optimistic — patch detail() and any matching list pages,
- *    rollback on error, then invalidate to converge with server.
- *  - Delete: optimistic removal from list pages, rollback on error.
+ * Create invalidates (filter would lie); update/delete are optimistic with
+ * snapshot rollback. See DECISIONS.md "Data layer" for rationale.
  */
 
 export function useCreateStatus() {

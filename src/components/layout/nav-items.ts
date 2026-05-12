@@ -7,10 +7,8 @@ export interface NavItem {
   icon: LucideIcon
   exact?: boolean
   /**
-   * Per-Link override for the router's `defaultPreload: 'intent'`. Set to
-   * `false` for routes whose data changes often (Feed, My Updates) so a
-   * pointer brushing the sidebar doesn't fire a refetch the user never asked
-   * for. See DECISIONS.md for the rationale.
+   * Per-Link override for `defaultPreload: 'intent'`. Set to `false` for
+   * high-churn routes (Feed, My Updates). See DECISIONS.md.
    */
   preload?: 'intent' | false
 }

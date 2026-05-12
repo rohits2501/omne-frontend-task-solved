@@ -9,9 +9,8 @@ import {
 import { statusKeys } from './status-keys'
 
 /**
- * Shared query options. Routes use these via `ensureQueryData` to warm the
- * cache on hover (the router has `defaultPreload: 'intent'`), and the hooks
- * below use the same shape so the loader and the component agree on key + fn.
+ * Shared query options — routes call `ensureQueryData` against these and the
+ * hooks below reuse them, so loader + component agree on key + fn.
  */
 export const statusListQueryOptions = (params: StatusListParams) =>
   queryOptions<StatusListResponse>({

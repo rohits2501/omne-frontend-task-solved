@@ -21,10 +21,7 @@ export const statusFormSchema = z.object({
 
 export type StatusFormValues = z.infer<typeof statusFormSchema>
 
-/**
- * Project list. The mock API doesn't expose `/api/projects`, so we hardcode
- * the same list the seed data uses. In a real app, this would be a query.
- */
+/** Mock has no `/api/projects` — in a real app this would be a query. */
 export const PROJECTS = [
   'Auth Overhaul',
   'Dashboard Redesign',

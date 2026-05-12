@@ -1,12 +1,9 @@
 import { createContext, type ReactNode, useContext, useMemo } from 'react'
 
 /**
- * The mock API has no auth, so we hardcode a single "current user".
- * This is the seam where real auth would slot in.
- *
- * Choice of `user-1` (Alex Chen) is deliberate: the seed data assigns
- * this author multiple statuses, so My Updates renders meaningfully on
- * first paint without needing to create one.
+ * Mock has no auth, so "me" is hardcoded — this is the seam where real auth
+ * would slot in. `user-1` was picked because the seed assigns them multiple
+ * statuses, so My Updates renders meaningfully on first paint.
  */
 
 export interface CurrentUser {

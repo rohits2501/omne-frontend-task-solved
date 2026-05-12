@@ -2,11 +2,8 @@ import { z } from 'zod'
 import { STATUS_VALUES } from '../api/statuses'
 
 /**
- * Zod schema for the feed page's search params. Used by TanStack Router's
- * `validateSearch` so the URL is the single source of truth for filter state.
- *
- * Empty / unknown values are normalized to `undefined` so the query key
- * collapses to a stable shape.
+ * Used by TanStack Router's `validateSearch` so the URL is the source of
+ * truth. Unknown values coerce to `undefined` so the query key stays stable.
  */
 export const feedSearchSchema = z.object({
   page: z.coerce.number().int().min(1).catch(1).default(1),

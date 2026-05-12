@@ -1,11 +1,6 @@
 import type { StatusListParams } from '../api/statuses'
 
-/**
- * Query key factory for status data.
- *
- * The hierarchy lets us invalidate broadly (`all`) or narrowly
- * (`detail(id)`) without touching unrelated caches.
- */
+/** Hierarchical query key factory — invalidate broadly or narrowly. */
 export const statusKeys = {
   all: ['statuses'] as const,
   lists: () => [...statusKeys.all, 'list'] as const,
