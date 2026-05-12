@@ -1,10 +1,7 @@
 import { z } from 'zod'
 import { STATUS_VALUES } from '../api/statuses'
 
-/**
- * Used by TanStack Router's `validateSearch` so the URL is the source of
- * truth. Unknown values coerce to `undefined` so the query key stays stable.
- */
+/** TanStack Router `validateSearch`. Unknown values coerce to `undefined` to keep the query key stable. */
 export const feedSearchSchema = z.object({
   page: z.coerce.number().int().min(1).catch(1).default(1),
   status: z.enum(STATUS_VALUES).optional().catch(undefined),

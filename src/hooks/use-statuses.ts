@@ -8,10 +8,7 @@ import {
 } from '../api/statuses'
 import { statusKeys } from './status-keys'
 
-/**
- * Shared query options — routes call `ensureQueryData` against these and the
- * hooks below reuse them, so loader + component agree on key + fn.
- */
+/** Shared queryOptions — used by route loaders (`ensureQueryData`) and component hooks. */
 export const statusListQueryOptions = (params: StatusListParams) =>
   queryOptions<StatusListResponse>({
     queryKey: statusKeys.list(params),

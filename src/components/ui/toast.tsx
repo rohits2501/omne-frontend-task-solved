@@ -13,10 +13,7 @@ import { createPortal } from 'react-dom'
 import { tv, type VariantProps } from 'tailwind-variants'
 import { cn } from '../../lib/cn'
 
-/**
- * Lightweight toast — small surface (queue + auto-dismiss) and we already
- * own the design tokens, so no 13kb dep for one feature.
- */
+/** Lightweight toast (queue + auto-dismiss) using our design tokens. */
 
 type ToastVariant = 'success' | 'danger' | 'info'
 

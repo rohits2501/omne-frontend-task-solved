@@ -10,10 +10,7 @@ import {
 } from '../api/statuses'
 import { statusKeys, teamSummaryKeys } from './status-keys'
 
-/**
- * Create invalidates (filter would lie); update/delete are optimistic with
- * snapshot rollback. See DECISIONS.md "Data layer" for rationale.
- */
+/** Create = invalidate; update/delete = optimistic w/ snapshot rollback. See DECISIONS.md. */
 
 export function useCreateStatus() {
   const queryClient = useQueryClient()

@@ -1,10 +1,6 @@
 import { createContext, type ReactNode, useContext, useMemo } from 'react'
 
-/**
- * Mock has no auth, so "me" is hardcoded — this is the seam where real auth
- * would slot in. `user-1` was picked because the seed assigns them multiple
- * statuses, so My Updates renders meaningfully on first paint.
- */
+/** Mock has no auth — `user-1` is hardcoded. See DECISIONS.md "Tradeoffs". */
 
 export interface CurrentUser {
   id: string

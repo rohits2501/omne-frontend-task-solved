@@ -65,8 +65,8 @@
 
   /* ─── Semantic tokens ─── */
   --color-foreground: var(--color-neutral-900);
-  --color-foreground-muted: var(--color-neutral-500);
-  --color-foreground-subtle: var(--color-neutral-400);
+  --color-foreground-muted: var(--color-neutral-600);
+  --color-foreground-subtle: var(--color-neutral-500);
 
   --color-surface: var(--color-white);
   --color-surface-raised: var(--color-neutral-50);

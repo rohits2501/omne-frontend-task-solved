@@ -26,6 +26,10 @@ A few other shapes are awkward enough to flag:
 - The status enum lives only in the prose spec — no discovery endpoint, so adding a fifth status silently breaks chip styling.
 - Search covers body and author name but not project. Users will type project names first and get zero matches.
 
+## Lighthouse polish
+
+Production build scores 100/100/100/100 — bumped the foreground tokens to pass WCAG AA contrast and added a permissive `public/robots.txt` so Lighthouse stops parsing the SPA fallback as robots directives.
+
 ## What I'd reach for next
 
 Real auth and a proper "me" endpoint; an author filter on the list so My Updates can stop capping at 50; some Vitest + RTL coverage for the form-submit → toast → invalidation flow and the optimistic rollback paths; and feed virtualization once datasets grow. The `api/` and `hooks/` modules are organized so swapping MSW for a real backend is essentially a one-file change.

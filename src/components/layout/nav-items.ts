@@ -6,10 +6,7 @@ export interface NavItem {
   label: string
   icon: LucideIcon
   exact?: boolean
-  /**
-   * Per-Link override for `defaultPreload: 'intent'`. Set to `false` for
-   * high-churn routes (Feed, My Updates). See DECISIONS.md.
-   */
+  /** Override for `defaultPreload: 'intent'`. See DECISIONS.md. */
   preload?: 'intent' | false
 }
 
