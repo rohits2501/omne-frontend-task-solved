@@ -1,6 +1,6 @@
 import { useForm } from '@tanstack/react-form'
 import { useNavigate } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { ApiError } from '../../api/client'
 import { STATUS_LABELS, STATUS_VALUES, type StatusValue } from '../../api/statuses'
 import type { Team } from '../../api/teams'
@@ -56,10 +56,10 @@ export function StatusForm({
   const updateMutation = useUpdateStatus()
   const [submitError, setSubmitError] = useState<string | null>(null)
 
-  const teamOptions: SelectOption<string>[] = teams.map((team) => ({
-    value: team.id,
-    label: team.name,
-  }))
+  const teamOptions = useMemo<SelectOption<string>[]>(
+    () => teams.map((team) => ({ value: team.id, label: team.name })),
+    [teams],
+  )
 
   const form = useForm({
     defaultValues: {
