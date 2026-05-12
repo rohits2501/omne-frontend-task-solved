@@ -32,7 +32,7 @@ const PROJECT_OPTIONS: SelectOption<string>[] = PROJECTS.map((name) => ({
 }))
 
 function firstError(errors: Array<unknown> | undefined): string | undefined {
-  if (!errors || errors.length === 0) return undefined
+  if (!errors?.length) return undefined
   const first = errors[0]
   if (typeof first === 'string') return first
   if (first && typeof first === 'object' && 'message' in first) {
