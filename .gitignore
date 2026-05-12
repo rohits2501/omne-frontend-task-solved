@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+
+# Figma output dependencies (the source files are tracked, but not node_modules)
+figma-output/node_modules/
+
+# Generated files
+src/routeTree.gen.ts
+
+# Environment
+.env
+.env.*
